@@ -846,9 +846,9 @@ TTS:
     # speech_rate: 0  # 语速：-500到500
     # pitch_rate: 0  # 语调：-500到500
 
-  CustomCosyVoice:
+  LocalCosyVoiceTTS:
     # 本地CosyVoice大模型流式文本语音合成
-    type: custom_cosyvoice
+    type: local_cosyvoice
     output_dir: tmp/
     voice: longxiaochun
     # 截至2025年7月21日大模型音色只有北京节点采用，其他节点暂不支持
