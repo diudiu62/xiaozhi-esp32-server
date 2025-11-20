@@ -845,6 +845,20 @@ TTS:
     # volume: 50  # 音量：0-100
     # speech_rate: 0  # 语速：-500到500
     # pitch_rate: 0  # 语调：-500到500
+
+  CustomCosyVoice:
+    # 本地CosyVoice大模型流式文本语音合成
+    type: custom_cosyvoice
+    output_dir: tmp/
+    voice: longxiaochun
+    # 截至2025年7月21日大模型音色只有北京节点采用，其他节点暂不支持
+    host: 127.0.0.1
+    # 以下可不用设置，使用默认设置
+    # format: pcm  # 音频格式：pcm、wav、mp3
+    # sample_rate: 16000  # 采样率：8000、16000、24000
+    # volume: 50  # 音量：0-100
+    # speech_rate: 0  # 语速：-500到500
+    # pitch_rate: 0  # 语调：-500到500
   TencentTTS:
     # 腾讯云智能语音交互服务，需要先在腾讯云平台开通服务
     # appid、secret_id、secret_key申请地址：https://console.cloud.tencent.com/cam/capi
