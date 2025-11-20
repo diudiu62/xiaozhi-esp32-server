@@ -54,7 +54,7 @@ class TTSProvider(TTSProviderBase):
 
         # WebSocket配置
         self.host = config.get("host", "localhost")  # 默认本地地址
-        self.ws_url = f"ws://{self.host}/ws/v1"
+        self.ws_url = f"ws://{self.host}"
         self.ws = None
         self._monitor_task = None
         self.last_active_time = None
