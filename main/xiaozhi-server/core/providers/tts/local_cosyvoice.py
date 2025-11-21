@@ -181,7 +181,7 @@ class TTSProvider(TTSProviderBase):
                     "message_id": uuid.uuid4().hex,
                     "task_id": self.task_id,
                     "namespace": "FlowingSpeechSynthesizer",
-                    "name": "RunSynthesis",
+                    "action": "continue-task",
                     "appkey": self.appkey,
                 },
                 "payload": {"text": filtered_text},
@@ -226,7 +226,7 @@ class TTSProvider(TTSProviderBase):
                     "message_id": uuid.uuid4().hex,
                     "task_id": self.task_id,
                     "namespace": "FlowingSpeechSynthesizer",
-                    "name": "StartSynthesis",
+                    "action": "run-task",
                     "appkey": self.appkey,
                 },
                 "payload": {
@@ -257,7 +257,7 @@ class TTSProvider(TTSProviderBase):
                         "message_id": uuid.uuid4().hex,
                         "task_id": self.task_id,
                         "namespace": "FlowingSpeechSynthesizer",
-                        "name": "StopSynthesis",
+                        "action": "finish-task",
                         "appkey": self.appkey,
                     }
                 }
@@ -381,13 +381,13 @@ class TTSProvider(TTSProviderBase):
                     close_timeout=10,
                 )
                 try:
-                    # 发送StartSynthesis请求
+                    # 发送run-task请求
                     start_request = {
                         "header": {
                             "message_id": uuid.uuid4().hex,
                             "task_id": self.task_id,
                             "namespace": "FlowingSpeechSynthesizer",
-                            "name": "StartSynthesis",
+                            "action": "run-task",
                             "appkey": self.appkey,
                         },
                         "payload": {
@@ -431,7 +431,7 @@ class TTSProvider(TTSProviderBase):
                             "message_id": uuid.uuid4().hex,
                             "task_id": self.task_id,
                             "namespace": "FlowingSpeechSynthesizer",
-                            "name": "RunSynthesis",
+                            "action": "continue-task",
                             "appkey": self.appkey,
                         },
                         "payload": {"text": filtered_text},
@@ -444,7 +444,7 @@ class TTSProvider(TTSProviderBase):
                             "message_id": uuid.uuid4().hex,
                             "task_id": self.task_id,
                             "namespace": "FlowingSpeechSynthesizer",
-                            "name": "StopSynthesis",
+                            "action": "finish-task",
                             "appkey": self.appkey,
                         }
                     }
